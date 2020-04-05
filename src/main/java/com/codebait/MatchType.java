@@ -8,10 +8,9 @@ enum MatchType implements Filter {
     @Override
     public boolean filter(String text, Set<String> patterns) {
       for (String pattern : patterns) {
-        if (!Pattern.compile(pattern).matcher(text).find()) {
-          continue;
+        if (Pattern.compile(pattern).matcher(text).find()) {
+          return true;
         }
-        return true;
       }
       return false;
     }
@@ -42,12 +41,11 @@ enum MatchType implements Filter {
     @Override
     public boolean filter(String text, Set<String> patterns) {
       for (String pattern : patterns) {
-        if (Pattern.compile(pattern).matcher(text).find()) {
-          continue;
+        if (!Pattern.compile(pattern).matcher(text).find()) {
+          return true;
         }
-        return true;
       }
-      return true;
+      return false;
     }
   }
 }

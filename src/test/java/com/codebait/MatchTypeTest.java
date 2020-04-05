@@ -91,7 +91,7 @@ class MatchTypeTest {
     // when
     boolean filter = MatchType.ANY_NOT_MATCH.filter(TEXT_WITH_NUMBER, patterns);
     // then
-    assertFalse(filter);
+    assertTrue(filter);
   }
 
   @Test
