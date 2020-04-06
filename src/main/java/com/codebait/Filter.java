@@ -1,9 +1,9 @@
 package com.codebait;
 
-import java.util.Set;
+import java.util.Collection;
 
 interface Filter {
 
-  boolean filter(String text, Set<String> patterns);
+  boolean filter(String text, Collection<String> patterns);
 
 }
